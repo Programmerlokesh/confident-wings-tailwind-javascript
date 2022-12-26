@@ -1,16 +1,17 @@
 import { FaFacebook, FaInstagram, FaYoutube } from "react-icons/fa";
 import { NavLink } from "react-router-dom";
+import footerlogo from "../assets/footerlogo.svg";
 
 const Footer = () => {
   return (
-    <section className="pt-40">
-      <footer className="grid items-center grid-cols-3 justify-items-center  bg-gradient-to-b from-indigo-700 to-indigo-500 pt-5">
+    <footer className="bottom-0 w-full pt-40">
+      <section className="grid items-center grid-cols-3 justify-items-center  bg-[#FFCD00] pt-5">
         {/* Logo */}
         <div className="logo">
           <NavLink to="/">
-            <h1 className="text-white font-semibold xsm:text-xl xsm:pl-3 sm:text-xl">
-              Confident Wings
-            </h1>
+            <div className="logo">
+              <img src={footerlogo} alt="" className="h-32 xsm:h-24" />
+            </div>
           </NavLink>
         </div>
         {/* Why us */}
@@ -32,9 +33,9 @@ const Footer = () => {
         </div>
         {/* Icon */}
         <div className="">
-          <h2 className="text-lg font-medium text-white">Follow us</h2>
+          <h2 className="text-lg font-medium text-black">Follow us</h2>
           <ul className="flex gap-7 xsm:gap-6 xsm:flex-col lg:flex-row md:flex-row sm:flex-row justify-center items-center">
-            <li className="lg:text-2xl text-white xsm:text-lg">
+            <li className="lg:text-2xl text-black xsm:text-lg">
               <a
                 href="https://www.facebook.com/susanta.mondal.3958"
                 target="_blank"
@@ -44,7 +45,7 @@ const Footer = () => {
               </a>
             </li>
 
-            <li className="lg:text-2xl text-white xsm:text-lg">
+            <li className="lg:text-2xl text-black xsm:text-lg">
               <a
                 href="https://www.instagram.com/susanta4201/"
                 target="_blank"
@@ -54,7 +55,7 @@ const Footer = () => {
               </a>
             </li>
 
-            <li className="text-white lg:text-2xl xsm:text-lg">
+            <li className="text-black lg:text-2xl xsm:text-lg">
               <a
                 href="https://www.youtube.com/@confidentwings1017/"
                 target="_blank"
@@ -65,9 +66,9 @@ const Footer = () => {
             </li>
           </ul>
         </div>
-      </footer>
+      </section>
       {/* bottom section  */}
-      <div className="bg-gradient-to-b from-indigo-500 to-indigo-500 pt-7">
+      <div className="bg-[#FFCD00] pt-7">
         <hr />
         <div className="text-center">
           <p className="font-semibold">
@@ -79,7 +80,7 @@ const Footer = () => {
           </div>
         </div>
       </div>
-    </section>
+    </footer>
   );
 };
 

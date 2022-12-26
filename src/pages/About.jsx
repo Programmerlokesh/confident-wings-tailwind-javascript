@@ -11,7 +11,7 @@ const About = () => {
               About us
             </h1>
             <p className="mt-6 mb-14 max-w-4xl font-sans text-justify">
-              Confident Wings is a career coaching business located in Basirhat,
+              Confident Wings is a career coaching services located in Basirhat,
               WB. Offering a variety of services, Confident Wings seeks to help
               individuals identify the career path that is most suited for them.
               Through assessments, career mapping and personalized guidance,

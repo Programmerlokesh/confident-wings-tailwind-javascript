@@ -18,7 +18,7 @@ const Contact = () => {
       ></iframe>
 
       <div className="mt-24 text-center">
-        <div className="contact-form max-w-[50rem] lg:m-auto xsm:mx-8">
+        <div className="contact-form max-w-[50rem] lg:m-auto md:mx-8 xsm:mx-8">
           <form
             action="https://formspree.io/f/xzbqprpl"
             method="POST"

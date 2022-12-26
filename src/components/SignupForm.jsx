@@ -7,6 +7,7 @@ import signupimg from "../assets/signup.svg";
 import { useAuth } from "../contexts/AuthContext";
 
 import Button from "./Button";
+import Checkbox from "./Checkbox";
 
 const SignupForm = () => {
   const [username, setUsername] = useState("");
@@ -119,15 +120,13 @@ const SignupForm = () => {
                 {<FcPrivacy />}
               </span>
             </div>
-            <label htmlFor="checkbox">
-              <input
-                type="checkbox"
-                required
-                value={agree}
-                onChange={(e) => setAgree(e.target.value)}
-              />
-              <span> I agree to the Terms &amp; Conditions</span>
-            </label>
+
+            <Checkbox
+              text="I agree to the Terms &amp; Conditions"
+              required
+              value={agree}
+              onChange={(e) => setAgree(e.target.value)}
+            />
 
             <Button disabled={loading}>Sign up</Button>
             {error && <p className="error">{error}</p>}

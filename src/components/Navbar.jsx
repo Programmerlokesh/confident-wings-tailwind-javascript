@@ -3,7 +3,8 @@ import { FaUserCircle } from "react-icons/fa";
 import { FcMenu } from "react-icons/fc";
 import { RxCross1 } from "react-icons/rx";
 import { NavLink } from "react-router-dom";
-import logo from "../assets/success.png";
+import headerlogo from "../assets/headerlogo1.svg";
+import avatarLogo from "../assets/success.png";
 import { useAuth } from "../contexts/AuthContext";
 
 const Navbar = ({ navLinks }) => {
@@ -22,7 +23,7 @@ const Navbar = ({ navLinks }) => {
 
   return (
     <header className="container max-w-full fixed z-50">
-      <nav className="flex justify-between bg-white p-3 items-center h-28 shadow-lg shadow-indigo-200 xsm:h-24">
+      <nav className="flex justify-between bg-[#FFCD00] p-3 items-center h-28 shadow-lg shadow-indigo-200 xsm:h-24">
         {/* NavLinks */}
         <div className="menubar transition-all duration-150">
           <span className="text-2xl cursor-pointer" onClick={openNavbar}>
@@ -30,7 +31,7 @@ const Navbar = ({ navLinks }) => {
           </span>
         </div>
         {/* Logo */}
-        <div className="logo uppercase font-semibold">
+        {/* <div className="logo uppercase font-semibold">
           <h2 className="text-4xl text-indigo-500 sm:text-3xl xsm:text-2xl">
             <span className="text-5xl text-indigo-600 sm:text-4xl xsm:text-3xl">
               C
@@ -41,6 +42,9 @@ const Navbar = ({ navLinks }) => {
             </span>
             ings
           </h2>
+        </div> */}
+        <div className="logo pt-2">
+          <img src={headerlogo} alt="" className="h-32 xsm:h-28" />
         </div>
         {/* Login Avatar */}
         <>
@@ -48,7 +52,7 @@ const Navbar = ({ navLinks }) => {
             <>
               <div className="avatar ring-2 rounded-full block relative ring-indigo-600 bg-slate-800 cursor-pointer">
                 <img
-                  src={logo}
+                  src={avatarLogo}
                   alt="profileIcon"
                   className="h-10 mx-auto object-cover w-10"
                   onClick={openAvatarMenu}
@@ -81,12 +85,22 @@ const Navbar = ({ navLinks }) => {
                   beforeWebsite ? "block" : "hidden"
                 }`}
               >
-                <ul className="flex flex-col justify-center items-center align-middle">
-                  <li className="cursor-pointer text-xl pt-5">
-                    <NavLink to="/login">Log in</NavLink>
+                <ul className="flex flex-col justify-center items-center align-middle transition-all duration-150">
+                  <li className="cursor-pointer text-xl pt-5 transition-all duration-150">
+                    <NavLink
+                      to="/login"
+                      onClick={() => setBeforeWebsite(!beforeWebsite)}
+                    >
+                      Log in
+                    </NavLink>
                   </li>
-                  <li className="cursor-pointer text-xl pt-5">
-                    <NavLink to="/signup">Sign up</NavLink>
+                  <li className="cursor-pointer text-xl pt-5 transition-all duration-150">
+                    <NavLink
+                      to="/signup"
+                      onClick={() => setBeforeWebsite(!beforeWebsite)}
+                    >
+                      Sign up
+                    </NavLink>
                   </li>
                 </ul>
               </div>
@@ -106,7 +120,7 @@ const Navbar = ({ navLinks }) => {
           {navLinks.map((link, i) => (
             <li
               key={i}
-              className="text-xl pb-16 hover:text-indigo-500 duration-200"
+              className="text-xl xsm:text-2xl pb-16 hover:text-indigo-500 duration-200"
             >
               <NavLink to={link.address} onClick={() => setOpenMenu(false)}>
                 {link.name}
