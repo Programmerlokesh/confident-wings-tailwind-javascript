@@ -31,18 +31,6 @@ const Navbar = ({ navLinks }) => {
           </span>
         </div>
         {/* Logo */}
-        {/* <div className="logo uppercase font-semibold">
-          <h2 className="text-4xl text-indigo-500 sm:text-3xl xsm:text-2xl">
-            <span className="text-5xl text-indigo-600 sm:text-4xl xsm:text-3xl">
-              C
-            </span>
-            onfident
-            <span className="text-5xl text-indigo-600 sm:text-4xl xsm:text-3xl">
-              W
-            </span>
-            ings
-          </h2>
-        </div> */}
         <div className="logo pt-2">
           <img src={headerlogo} alt="" className="h-32 xsm:h-28" />
         </div>
