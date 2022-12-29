@@ -1,33 +1,54 @@
+import { NavLink } from "react-router-dom";
 import aboutImg from "../assets/about.svg";
 import Contact from "./Contact";
 
 const About = () => {
   return (
     <>
-      <section className="pt-36 px-16 xsm:px-8">
-        <div className="flex xsm:flex-wrap lg:flex-nowrap xsm:gap-11 md:flex-nowrap">
-          <div className="details flex flex-col justify-center flex-auto">
-            <h1 className="uppercase font-semibold text-5xl text-indigo-500">
+      <section className="text-gray-600 body-font pt-40 md:pt-32 sm:pt-28 xsm:pt-[4rem]">
+        <div className="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
+          <div className="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center">
+            <h1 className="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900">
               About us
             </h1>
-            <p className="mt-6 mb-14 max-w-4xl font-sans text-justify">
+            <p className="mb-8 leading-relaxed text-justify">
+              {" "}
               Confident Wings is a career coaching services located in Basirhat,
-              WB. Offering a variety of services, Confident Wings seeks to help
-              individuals identify the career path that is most suited for them.
-              Through assessments, career mapping and personalized guidance,
-              Confident Wings helps individuals achieve their goals. I recently
-              began utilizing the services of Confident Wings to help me develop
-              a career roadmap that is tailored to my individual needs. With the
-              assistance of their knowledgeable and experienced staff, I have
-              been able to identify the best route to take in order to achieve
-              my professional goals. My experience has been positive, and I am
-              confident that Confident Wings has given me the tools and guidance
-              I need to succeed. Highly recommended.
+              West Bengal. Confident Wings is a phrase that could refer to a
+              number of different things, depending on the context in which it
+              is used. It could be the name of a business, organization, or
+              program that focuses on helping people develop confidence and
+              self-assurance in their abilities or actions. It could also be
+              used more broadly as a metaphor for feeling strong and capable, as
+              if you have wings that allow you to soar and accomplish your
+              goals. In either case, the idea behind Confident Wings is to
+              provide support, guidance, and resources to help people feel more
+              confident and capable in their endeavors. This could involve
+              providing education or training, offering encouragement and
+              motivation, or helping people develop the skills and resources
+              they need to succeed. Ultimately, the goal of Confident Wings
+              would be to help people feel empowered and capable of achieving
+              their goals, whatever they may be.
             </p>
+            <div className="flex justify-center">
+              <NavLink to="/quiz">
+                <button className="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">
+                  Quiz
+                </button>
+              </NavLink>
+              <NavLink to="/">
+                <button className="ml-4 inline-flex text-gray-700 bg-gray-100 border-0 py-2 px-6 focus:outline-none hover:bg-gray-200 rounded text-lg">
+                  Home
+                </button>
+              </NavLink>
+            </div>
           </div>
-          {/* img */}
-          <div className="img flex justify-center items-center">
-            <img src={aboutImg} alt="aboutImg" className="max-w-[90%]" />
+          <div className="lg:max-w-lg lg:w-full md:w-1/2 w-5/6">
+            <img
+              className="object-cover object-center rounded"
+              src={aboutImg}
+              alt="aboutImg"
+            />
           </div>
         </div>
       </section>

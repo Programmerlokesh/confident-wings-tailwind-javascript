@@ -1,12 +1,11 @@
 import React from "react";
 import { AiOutlineArrowLeft, AiOutlineArrowRight } from "react-icons/ai";
-import classes from "../styles/ProgressBar.module.css";
 
 const Progressbar = () => {
   return (
-    <div className="w-[calc(100vw-100px)] h-16 left-0 right-0 top-auto mx-auto my-0 bg-white border border-solid border-[#e5e5e5] rounded-lg grid justify-between items-center">
-      <div className={classes.backButton}>
-        <span className="material-icons-outlined">
+    <div className="w-[calc(100vw-100px)] h-16 left-0 right-0 top-auto mx-auto my-0 bg-white border border-solid border-[#e5e5e5] rounded-lg grid justify-between items-center relative">
+      <div className="left-0 absolute h-full flex items-center px-4 bg-[#FFCD00] hover:scale-95 cursor-pointer">
+        <span className="text-xl ">
           {" "}
           <AiOutlineArrowLeft />{" "}
         </span>
@@ -23,8 +22,8 @@ const Progressbar = () => {
           </div>
         </div>
       </div> */}
-      <div className={classes.backButton}>
-        <span className="">
+      <div className="right-0 absolute h-full flex items-center px-4 justify-center bg-[#FFCD00] cursor-pointer hover:scale-95">
+        <span className="text-xl">
           {" "}
           <AiOutlineArrowRight />{" "}
         </span>
