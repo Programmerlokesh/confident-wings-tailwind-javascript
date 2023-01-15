@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { FaUserCircle } from "react-icons/fa";
 import { FcMenu } from "react-icons/fc";
 import { RxCross1 } from "react-icons/rx";
@@ -10,7 +10,18 @@ import { useAuth } from "../contexts/AuthContext";
 const Navbar = ({ navLinks }) => {
   const [openMenu, setOpenMenu] = useState(false);
   const [openAvatar, setOpenAvatar] = useState(false);
-  const [beforeWebsite, setBeforeWebsite] = useState();
+
+  const ref = useRef();
+
+  const openProfile = () => {
+    if (ref.current.classList.contains("translate-x-full")) {
+      ref.current.classList.remove("translate-x-full");
+      ref.current.classList.add("translate-x-0");
+    } else if (!ref.current.classList.contains("translate-x-full")) {
+      ref.current.classList.remove("translate-x-0");
+      ref.current.classList.add("translate-x-full");
+    }
+  };
 
   const openNavbar = () => {
     setOpenMenu(!openMenu);
@@ -20,6 +31,7 @@ const Navbar = ({ navLinks }) => {
   };
 
   const { currentUser, logout } = useAuth();
+  // console.log(currentUser.email);
 
   return (
     <header className="container max-w-full fixed z-50">
@@ -47,37 +59,39 @@ const Navbar = ({ navLinks }) => {
                 />
               </div>
               <div
-                className={`avatar_box right-0 absolute w-40 h-28 bg-white shadow-lg shadow-indigo-200 top-24 ${
+                className={`avatar_box right-0 absolute transition-all w-48 h-40 bg-white shadow-lg shadow-indigo-200 top-24 rounded-md ${
                   openAvatar ? "block" : "hidden"
                 }`}
               >
                 <ul className="flex flex-col justify-center items-center align-middle">
-                  <li className="cursor-pointer text-xl pt-5">
+                  <li className="cursor-pointer text-xl pt-5 py-6 font-medium">
                     {currentUser.displayName}
                   </li>
-                  <li className="cursor-pointer text-xl pt-4" onClick={logout}>
+                  <button
+                    className="flex mx-auto text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg"
+                    onClick={logout}
+                  >
                     Log Out
-                  </li>
+                  </button>
                 </ul>
               </div>
             </>
           ) : (
             <>
               <div className="cursor-pointer text-3xl text-slate-600">
-                <span onClick={() => setBeforeWebsite(!beforeWebsite)}>
+                <span onClick={openProfile}>
                   <FaUserCircle />
                 </span>
               </div>
               <div
-                className={`avatar_box right-0 absolute w-40 h-28 bg-white shadow-lg shadow-indigo-200 top-24 ${
-                  beforeWebsite ? "block" : "hidden"
-                }`}
+                className={`avatar_box right-0 absolute w-40 h-28 bg-white shadow-lg shadow-indigo-200 top-24 transform transition-transform translate-x-full`}
+                ref={ref}
               >
                 <ul className="flex flex-col justify-center items-center align-middle transition-all duration-150">
                   <li className="cursor-pointer text-xl pt-5 transition-all duration-150">
                     <NavLink
                       to="/login"
-                      onClick={() => setBeforeWebsite(!beforeWebsite)}
+                      // onClick={() => setBeforeWebsite(!beforeWebsite)}
                     >
                       Log in
                     </NavLink>
@@ -85,7 +99,7 @@ const Navbar = ({ navLinks }) => {
                   <li className="cursor-pointer text-xl pt-5 transition-all duration-150">
                     <NavLink
                       to="/signup"
-                      onClick={() => setBeforeWebsite(!beforeWebsite)}
+                      // onClick={() => setBeforeWebsite(!beforeWebsite)}
                     >
                       Sign up
                     </NavLink>
@@ -100,8 +114,8 @@ const Navbar = ({ navLinks }) => {
 
       {/* NavLinks box */}
       <div
-        className={`menulist h-screen max-h-screen bg-white shadow-lg shadow-indigo-200 block md:w-60 xsm:w-full sm:w-60 ${
-          openMenu ? "block" : "hidden"
+        className={`menulist h-screen max-h-screen bg-white shadow-lg shadow-indigo-200 block md:w-60 xsm:w-full sm:w-60 transform transition-transform translate-x-0 ${
+          openMenu ? "block" : "hidden -translate-x-3"
         }`}
       >
         <ul className="flex flex-col justify-center text-center items-center pt-44 xsm:pt-20 ">

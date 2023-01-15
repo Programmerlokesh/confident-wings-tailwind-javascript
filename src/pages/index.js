@@ -3,7 +3,19 @@ import Contact from "./Contact";
 import Error from "./Error";
 import Home from "./Home";
 import Login from "./Login";
-import Quiz from "./Quiz";
+import QuizHome from "./QuizHome";
+import QuizPage from "./QuizPage";
+import Result from "./Result";
 import Signup from "./Signup";
 
-export { Home, Contact, Error, About, Quiz, Login, Signup };
+export {
+  Home,
+  Contact,
+  Error,
+  About,
+  QuizHome,
+  Login,
+  Signup,
+  QuizPage,
+  Result,
+};

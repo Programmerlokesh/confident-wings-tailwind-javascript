@@ -1,7 +1,7 @@
 const Contact = () => {
   return (
-    <section className="text-gray-600 body-font relative pb-20">
-      <h2 className="text-5xl xsm:text-3xl font-semibold mb-20 xsm:mb-14 capitalize text-center pt-40 md:pt-32 sm:pt-28 xsm:pt-[8rem]">
+    <section className="text-gray-600 relative pb-20">
+      <h2 className="text-5xl xsm:text-3xl font-semibold mb-20 xsm:mb-14 capitalize text-center">
         Feel Free to Contact me
       </h2>
       <div className="container px-5 py-10 mx-auto flex sm:flex-nowrap flex-wrap">

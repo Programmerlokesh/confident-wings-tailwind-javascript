@@ -10,7 +10,7 @@ const navLinks = [
     name: "About",
   },
   {
-    address: "/quiz",
+    address: "/quizhome",
     name: "Quiz",
   },
   {

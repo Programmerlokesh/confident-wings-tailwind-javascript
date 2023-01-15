@@ -3,7 +3,7 @@ import footerlogo from "../assets/footerlogo.svg";
 
 const Footer = () => {
   return (
-    <footer className="text-gray-600 body-font bg-[#FFCD00]">
+    <footer className="text-gray-600 body-font bg-[#FFCD00] bottom-0">
       <div className="container px-5 py-8 mx-auto flex items-center sm:flex-row flex-col">
         <NavLink
           to="/"

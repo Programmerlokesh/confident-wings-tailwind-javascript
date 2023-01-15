@@ -5,7 +5,7 @@ import Contact from "./Contact";
 const Home = () => {
   return (
     <>
-      <section className="text-gray-600 body-font pt-40 md:pt-32 sm:pt-28 xsm:pt-[4rem]">
+      <section className="text-gray-600">
         <div className="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
           <div className="lg:max-w-lg lg:w-full md:w-1/2 w-5/6 mb-10 md:mb-0">
             <img
@@ -35,7 +35,7 @@ const Home = () => {
               goals.
             </p>
             <div className="flex justify-center">
-              <NavLink to="/quiz">
+              <NavLink to="/quizhome">
                 <button className="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">
                   Quiz
                 </button>
