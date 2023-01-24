@@ -1,6 +1,6 @@
 {
   "rules": {
-    "videos": {
+    "options": {
       ".read": true,
       ".write": false
     },

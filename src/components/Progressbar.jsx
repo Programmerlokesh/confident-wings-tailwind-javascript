@@ -28,7 +28,7 @@ const Progressbar = ({ next, prev, submit, progress }) => {
       </div>
       <div className="w-full relative my-0">
         <div ref={tooltipRef} className="text-center font-medium font-sans">
-          {progress}% Complete!
+          {Math.floor(progress)}% Complete!
         </div>
         {/* <div className="w-full bg-[#FFCD00] rounded-full h-[4px] mb-4">
           <div

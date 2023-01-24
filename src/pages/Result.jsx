@@ -1,11 +1,11 @@
-import { useLocation, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { Analysis, Summary } from "../components";
 import useAnswers from "../hooks/useAnswers";
 
 const Result = () => {
   const { id } = useParams();
   const { answers, error, loading } = useAnswers(id);
-  const location = useLocation();
+  // const location = useLocation();
   // console.log(location.state);
 
   // const { state } = location;

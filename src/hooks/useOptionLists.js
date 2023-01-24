@@ -19,7 +19,7 @@ const useOptionLists = (page) => {
     async function fetchLists() {
       // database related works
       const db = getDatabase();
-      const listRef = ref(db, "videos");
+      const listRef = ref(db, "options");
       const listQuery = query(
         listRef,
         orderByKey(),

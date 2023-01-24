@@ -19,7 +19,7 @@ const Quizes = () => {
           {lists.map((list) =>
             list.map((text, index) =>
               text.noq > 0 ? (
-                <NavLink to={`/quizpage/${text.youtubeID}`} key={index}>
+                <NavLink to={`/quizpage/${text.listID}`} key={index}>
                   <Quiz title={text.title} noq={text.noq} />
                 </NavLink>
               ) : (
