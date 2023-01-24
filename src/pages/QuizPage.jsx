@@ -94,10 +94,10 @@ const QuizPage = () => {
       {error && <div className="text-red-500 text-xl">There was an error!</div>}
       {!loading && !error && qna && qna.length > 0 && (
         <>
-          <h1 className="text-3xl font-semibold py-3 text-slate-700">
+          <h1 className="text-3xl font-semibold py-3 text-slate-700 ml-3">
             {qna[currentQuestion].title}
           </h1>
-          <h4 className="text-xl font-medium">
+          <h4 className="text-xl font-medium ml-3">
             Question can have multiple answers
           </h4>
           <Answers
